@@ -9,6 +9,7 @@ export class AppComponent {
   name?: string;
   date?: string;
   amount?: string;
+  km?: number;
 
   objectPipe = [
     { name: 'Ricardo', lastName: 'Tenorio' },
@@ -32,5 +33,11 @@ export class AppComponent {
     const value = target.value;
     this.amount = value;
 
+  }
+
+  onKmChange (event: Event) {
+    const target = event.target as HTMLInputElement;
+    const value = parseFloat(target.value);
+    this.km = value;
   }
 }
