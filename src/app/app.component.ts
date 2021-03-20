@@ -7,10 +7,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name?: string;
+  date?: string;
+  amount?: string;
+
+  objectPipe = [
+    { name: 'Ricardo', lastName: 'Tenorio' },
+    { name: 'Bruno', lastName: 'Araújo'}
+  ];
 
   onNameChange (event: Event) {
     const target = event.target as HTMLInputElement;
     const value = target.value;
     this.name = value;
+  }
+
+  onDateChange (event: Event) {
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.date = value;
+  }
+
+  onAmountChange (event: Event) {
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.amount = value;
+
   }
 }

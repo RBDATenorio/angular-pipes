@@ -1,12 +1,56 @@
 <div class="container">
-  <h3>
+  <h3 class="mt-3">
     Payment Form
   </h3>
   <div class="row">
     <div class="form-group col">
-      <label> Payee Name </label>
-      <input class="form-control" (input)="onNameChange($event)"/>
+      <label for="inputName"> Payee Name </label>
+      <input class="form-control" (input)="onNameChange($event)" id="inputName"/>
+    </div>
+  
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{ name | titlecase }}
+      </div>
     </div>
   </div>
-  {{ name | titlecase }}
+
+  <div class="row">
+    <div class="form-group col">
+      <label> Payment Date </label>
+      <input type="date" class="form-control" (input)="onDateChange($event)"/>
+    </div>
+  
+    <div class="col">
+      <label><b>Payment Date</b></label>
+      <div>
+        {{ date | date }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label> Amount </label>
+      <input class="form-control" (input)="onAmountChange($event)"/>
+    </div>
+  
+    <div class="col">
+      <label><b>Amount</b></label>
+      <div>
+        {{ amount | currency: 'BRL' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label><b>Json PIPE</b></label>
+      <div>
+        {{ objectPipe[0] | json }}
+      </div>
+    </div>
+  </div>
+
 </div>
